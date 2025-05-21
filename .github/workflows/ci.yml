@@ -1,0 +1,24 @@
+name: gh-actions/site
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        ruby: [ '3.2', '3.3' ]
+    name: Ruby ${{ matrix.ruby }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ${{ matrix.ruby }}
+          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+      - name: install bundler
+        run: gem install bundler
+      - name: bundle install
+        run: bundle install --jobs 4 --retry 3
+      - name: build site
+        run: bundle exec jekyll build
