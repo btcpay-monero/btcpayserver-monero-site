@@ -12,9 +12,20 @@ This post guides you through deploying BTCPay Server with Bitcoin and Monero on 
 Before you begin, ensure you have the following:
 
 - A server or computer with Docker installed.
-- An external disk with sufficient space for the Bitcoin and Monero.
+   - Recommended OS: Ubuntu 20.04 LTS or Debian 10/11.
+   - CPU: 2 cores or more.
+   - 4 GB RAM minimum (8 GB or more recommended).
+   - At least 50 GB of free disk space for the operating system and Docker.
+   - Attached external disk with at least 1 TB capacity for blockchain data.
 - Basic knowledge of Docker and command-line operations.
-- Access to the external disk from your Docker host (it should be mounted and accessible).
+- A domain name or local hostname (e.g., `btcpay.local`) for accessing BTCPay Server.
+- SSH access to your server for remote management if needed.
+- Ensure your server has a static IP address or a dynamic DNS service configured for consistent access.
+
+## Important Notes
+- This guide assumes you would like to run both Bitcoin and Monero full nodes alongside BTCPay Server. 
+
+- If you would like to save space, bitcoind can be configured to run in pruned mode by setting the environment variable `opt-save-storage-xs` in step 7.
 
 ## Step 1: Prepare the External Disk
 
@@ -128,13 +139,18 @@ cd btcpayserver-docker
 Set environment variables to include both Bitcoin and Monero:
 
 ```bash
-export BTCPAY_HOST="btcpay.local"
-export REVERSEPROXY_DEFAULT_HOST="$BTCPAY_HOST"
+export BTCPAY_HOST="btcpay.local" # Replace with your domain or local hostname
+export REVERSEPROXY_DEFAULT_HOST="$BTCPAY_HOST" 
 export NBITCOIN_NETWORK="mainnet"
-export BTCPAYGEN_CRYPTO1="btc"
-export BTCPAYGEN_LIGHTNING="clightning"
-export BTCPAYGEN_REVERSEPROXY="nginx"
-export BTCPAY_ENABLE_SSH=true
+export BTCPAYGEN_CRYPTO1="btc" 
+export BTCPAYGEN_LIGHTNING="clightning" # or "lnd" for LND
+export BTCPAYGEN_REVERSEPROXY="nginx" # Use nginx for reverse proxy
+export BTCPAY_ENABLE_SSH=true # Enable SSH for remote access
+```
+
+If you want to prune nodes to save space, add the following line:
+```bash
+export BTCPAYGEN_ADDITIONAL_FRAGMENTS="opt-save-storage-xs;"
 ```
 
 If you have additional domains:
@@ -142,6 +158,8 @@ If you have additional domains:
 ```bash
 export BTCPAY_ADDITIONAL_HOSTS="btcpay.yourdomain.com"
 ```
+
+Find all the available environment variables and their descriptions in the [BTCPay Server documentation](https://github.com/btcpayserver/btcpayserver-docker#environment-variables).
 
 ## Step 8: Run BTCPay Server Setup
 
