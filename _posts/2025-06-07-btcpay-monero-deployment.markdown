@@ -196,6 +196,14 @@ After installing the Monero plugin, configure your Monero wallet:
 1. Go to the "Wallets" section in BTCPay Server.
 2. Click on XMR Wallet and upload your wallet file, wallet.keys file and password.
 
+Note: This feature is currently broken in the initial release of the Monero plugin. You will need to manually move the wallet files to the appropriate directory. This will be `/mnt/btcpay-data/volumes/generated_xmr_wallet/_data` or similar, depending on your configuration.
+
+When replacing the wallet files, you will need to restart the monero wallet container for the changes to take effect:
+
+```bash
+docker restart btcpayserver_monero_wallet
+```
+
 ## Step 11: Monitor and Maintain
 After installation, monitor the logs and ensure everything is running smoothly:
 
