@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "BTCPay with Bitcoin and Monero on External Disk - Docker Deployment Guide"
+excerpt_image: ../assets/images/hdd.jpg
 date:   2025-06-07 08:45:02 +0200
 categories: docker btcpay bitcoin monero deployment
 ---
