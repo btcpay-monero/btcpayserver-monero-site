@@ -28,7 +28,8 @@ description: >- # this means to ignore newlines until "baseurl:"
   It includes guides, FAQs, and troubleshooting tips to help you navigate
   the integration of Monero with BTCPay Server effectively.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://btcpay.host" # the base hostname & protocol for your site, e.g. http://example.com
+logo: "/assets/images/logo.png" # the path to your logo image
 
 # Build settings
 remote_theme: "jeffreytse/jekyll-theme-yat"

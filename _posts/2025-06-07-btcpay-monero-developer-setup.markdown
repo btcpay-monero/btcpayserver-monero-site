@@ -2,6 +2,7 @@
 layout: post
 title:  "Developer Setup for BTCPay Monero Plugin"
 excerpt_image: ../assets/images/hacker.jpg
+image: ../assets/images/hacker.jpg
 date:   2025-06-09 6:45:02 +0200
 categories: developer
 ---
