@@ -3,7 +3,7 @@ layout: post
 title:  "BTCPay with Bitcoin and Monero on External Disk - Docker Deployment Guide"
 excerpt_image: ../assets/images/hdd.jpg
 date:   2025-06-07 08:45:02 +0200
-categories: docker btcpay bitcoin monero deployment
+categories: vendor
 ---
 
 This post guides you through deploying BTCPay Server with Bitcoin and Monero on an external disk using Docker. This configuration is ideal for those aiming to keep blockchain data separate from the main system drive, ensuring better performance and easier management.
