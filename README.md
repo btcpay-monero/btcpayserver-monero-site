@@ -1,7 +1,8 @@
 <div align="center">
 
-![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/btcpay-monero/btcpayserver-monero-site/ci.yml?branch=main)
+[![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/btcpay-monero/btcpayserver-monero-site/ci.yml?branch=main)](https://github.com/btcpay-monero/btcpayserver-monero-site/actions)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/3e2c9e86c25242b5bf8854f72cc80c98)](https://app.codacy.com/gh/btcpay-monero/btcpayserver-monero-site/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](CODE_OF_CONDUCT.md)
 </div>
 
 # BTCPayServer Monero plugin website
